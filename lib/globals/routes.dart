@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../features/auth/login.dart';
 import '../features/dashboard/dashboard_screen.dart';
+import '../features/main_screen.dart';
 import '../features/recommendations/recommendations_screen.dart';
 import '../features/scan/scan_process_screen.dart';
 import '../features/scan/scan_start_screen.dart';
@@ -12,6 +13,7 @@ class AppRoutes {
 
   static const String loginScreen = '/login_screen';
   static const String dashboardScreen = '/dashboard_screen';
+  static const String mainScreen = '/main_screen';
   static const String scanStartScreen = '/scan_start_screen';
   static const String scanProcessScreen = '/scan_process_screen';
   static const String recommendationsScreen = '/recommendations_screen';
@@ -21,6 +23,7 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     loginScreen: (context) => LoginScreen(),
+    mainScreen: (context) => MainScreen(),
     dashboardScreen: (context) => DashboardScreen(),
     scanStartScreen: (context) => ScanStartScreen(),
     scanProcessScreen: (context) => ScanProcessScreen(),

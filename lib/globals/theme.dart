@@ -5,7 +5,7 @@ class ThemeClass{
   static ThemeData lightMode = ThemeData(
       scaffoldBackgroundColor: Colors.white,
       colorScheme: ColorScheme.light(
-        background: Colors.grey.shade300,
+        background: Colors.white,
         primary: Colors.grey.shade500,
         secondary: Colors.grey.shade200,
         tertiary: Colors.white,
@@ -16,20 +16,11 @@ class ThemeClass{
   static ThemeData darkMode = ThemeData(
       scaffoldBackgroundColor: Colors.black,
       colorScheme: ColorScheme.dark(
-        primary: Colors.white,
-        onPrimary: Colors.black,
-        secondary: Colors.white,
-        onSecondary: Colors.black,
-        background: Colors.black,
-        onBackground: Colors.white,
-        surface: Colors.black,
-        onSurface: Colors.white,
-        error: Colors.white,
-        onError: Colors.black,
-        brightness: Brightness.dark,
+        background: Colors.grey.shade900,
+        primary: Colors.grey.shade600,
+        secondary: const Color.fromARGB(255, 57, 57, 57), // Color(0xFF393939
+        tertiary: Colors.grey.shade800,
+        inversePrimary: Colors.grey.shade300,
       ),
-      appBarTheme: AppBarTheme(
-        backgroundColor: Colors.black,
-      )
   );
 }

@@ -1,5 +1,7 @@
+import 'package:fld/globals/routes.dart';
 import 'package:fld/widgets/button_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../widgets/input_field_widgets.dart';
 
@@ -8,7 +10,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // [email, password, forget password link, login button, remember me checkbox]
+
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       body: SafeArea(
@@ -17,16 +19,22 @@ class LoginScreen extends StatelessWidget {
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Center(
-                  child: Image.network(
-                    'https://fldai.org/static/logo.png',
-                    height: 100,
+                Image.network(
+                  'https://fldai.org/static/logo.png',
+                  height: 100,
+                ),
+                const SizedBox(height: 10),
+                Text(
+                  "Perfect fit at your fingertips",
+                  style: GoogleFonts.aBeeZee(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red[400],
                   ),
                 ),
                 const SizedBox(height: 30),
-
                 FLDTextFormField(
                   hintText: "Email",
                   prefixIcon: Icons.email,
@@ -40,18 +48,34 @@ class LoginScreen extends StatelessWidget {
                   keyboardType: TextInputType.text,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Checkbox(
                       value: false,
                       onChanged: (value) {},
                     ),
-                    Text('Remember Me'),
+                    const Text('Remember Me'),
                   ],
                 ),
-                FLDElevatedButton(title: "Login", icon: Icons.login),
-                TextButton(
-                  onPressed: () {},
-                  child: Text('Forget Password'),
+                FLDElevatedButton(
+                    title: "Login", icon: Icons.login_sharp,
+                    onPressed: ()=> Navigator.pushNamed(context, AppRoutes.mainScreen),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: TextButton(
+                    onPressed: () {},
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.zero,
+                    ),
+                    child: Text(
+                      'Forget Password? Reset here.',
+                      style: GoogleFonts.aBeeZee(
+                        color: Colors.red[400],
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),

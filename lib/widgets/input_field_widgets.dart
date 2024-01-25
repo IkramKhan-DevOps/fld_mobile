@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FLDTextFormField extends StatelessWidget {
 
@@ -33,13 +34,13 @@ class FLDTextFormField extends StatelessWidget {
       keyboardType: keyboardType,
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(
-          color: Theme.of(context).colorScheme.onBackground,
+        hintStyle: GoogleFonts.zillaSlab(
+          color: Theme.of(context).colorScheme.primary,
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.tertiary,
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
         focusedBorder: OutlineInputBorder(

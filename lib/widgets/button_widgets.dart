@@ -6,7 +6,7 @@ class FLDElevatedButton extends StatelessWidget {
   final Color? backgroundColor;
   final Color? foregroundColor;
   final EdgeInsets? padding;
-  final void Function()? onPressed;
+  final void Function() onPressed;
 
   const FLDElevatedButton({
     Key? key,
@@ -15,7 +15,7 @@ class FLDElevatedButton extends StatelessWidget {
     this.backgroundColor,
     this.foregroundColor,
     this.padding,
-    this.onPressed,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -23,8 +23,9 @@ class FLDElevatedButton extends StatelessWidget {
     return ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.primary,
-          foregroundColor: foregroundColor ?? Theme.of(context).colorScheme.secondary,
+          backgroundColor: Colors.red[500],
+          foregroundColor:
+              foregroundColor ?? Theme.of(context).colorScheme.secondary,
           padding: padding ?? const EdgeInsets.all(18),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -34,9 +35,13 @@ class FLDElevatedButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(icon, size: 18),
-            Text(" $title", style: TextStyle(fontSize: 18)),
+            Text(
+              " $title",
+              style: const TextStyle(
+                fontSize: 18,
+              ),
+            ),
           ],
-        )
-    );
+        ));
   }
 }
